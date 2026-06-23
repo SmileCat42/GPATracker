@@ -1,15 +1,75 @@
 [
     {
+        "code": "RAM1111",
+        "name": "ภาษาอังกฤษในชีวิตประจำวัน",
+        "credit": 3,
+        "grade": "A"
+    },
+    {
+        "code": "RAMXXXX",
+        "name": "กลุ่มวิชาภาษาไทย",
+        "credit": 3,
+        "grade": "C+"
+    },
+    {
+        "code": "RAMXXXX",
+        "name": "กลุ่มวิชาเลือกภาษาต่างประเทศ",
+        "credit": 3,
+        "grade": ""
+    },
+    {
+        "code": "RAMXXXX",
+        "name": "กลุ่มวิชาเทคโนโลยี",
+        "credit": 3,
+        "grade": ""
+    },
+    {
+        "code": "RAMXXXX",
+        "name": "กลุ่มวิชาการปรับตัว",
+        "credit": 3,
+        "grade": ""
+    },
+    {
+        "code": "RAMXXXX",
+        "name": "กลุ่มวิชาการคิด",
+        "credit": 3,
+        "grade": ""
+    },
+    {
+        "code": "RAMXXXX",
+        "name": "กลุ่มวิชาการเป็นผู้ประกอบการ",
+        "credit": 3,
+        "grade": ""
+    },
+    {
+        "code": "RAM1301",
+        "name": "คุณธรรมคู่ความรู้",
+        "credit": 3,
+        "grade": ""
+    },
+    {
+        "code": "RAMXXXX",
+        "name": "วิทย์&กฏหมาย",
+        "credit": 3,
+        "grade": ""
+    },
+    {
+        "code": "RAMXXXX",
+        "name": "กลุ่มวิชาศิลปะและวัฒนธรรม",
+        "credit": 3,
+        "grade": ""
+    },
+    {
         "code": "MTH1101",
         "name": "แคลคูลัสและเรขาคณิตวิเคราะห์ 1",
         "credit": 3,
-        "grade": ""
+        "grade": "A"
     },
     {
         "code": "MTH1201",
         "name": "คณิตศาสตร์สำหรับวิทยาการคอมพิวเตอร์",
         "credit": 3,
-        "grade": ""
+        "grade": "B"
     },
     {
         "code": "STA2003",
@@ -21,7 +81,7 @@
         "code": "COS1101",
         "name": "วิทยาการคอมพิวเตอร์เบื้องต้น",
         "credit": 3,
-        "grade": ""
+        "grade": "A"
     },
     {
         "code": "COS1102",

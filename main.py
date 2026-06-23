@@ -8,6 +8,9 @@ current_table = None
 def update_grade():
 
     global current_table
+    if current_table is None:
+        return
+    
     selected_item = current_table.selection()
 
     if not selected_item:
@@ -38,6 +41,29 @@ def update_grade():
             ensure_ascii=False,
             indent=4
     )
+    
+    if current_table == table_wait:
+        values = current_table.item(
+        selected_item[0],
+        "values"
+    )
+
+    new_values = (
+        values[0],          # code
+        values[1],          # name
+        values[2],          # credit
+        grade_var.get()     # grade ใหม่
+    )
+
+    table_wait.delete(
+        selected_item[0]
+    )
+
+    table_passed.insert(
+        "",
+        tk.END,
+        values=new_values
+    )
 
 def on_select(event):
     
@@ -67,12 +93,39 @@ def on_select(event):
 
 window = tk.Tk()
 
-passed_frame = ttk.Frame(window)
+style = ttk.Style()
+print(style.theme_names())
+style.theme_use("clam")
+
+style.configure(
+    "Passed.Treeview",
+    background="#E8F5E9",
+    fieldbackground="#E8F5E9"
+)
+
+style.configure(
+    "Wait.Treeview",
+    background="#FFF8E1",
+    fieldbackground="#FFF8E1"
+)
+style.configure(
+    "Treeview",
+    rowheight=30
+)
+
+passed_frame = ttk.LabelFrame(
+    window,
+    text="วิชาที่ผ่านแล้ว"
+)
+
+waiting_frame = ttk.LabelFrame(
+    window,
+    text="วิชาที่ยังไม่ผ่าน"
+)
 center_frame = ttk.Frame(window)
-waiting_frame = ttk.Frame(window)
 
 window.title("โปรแกรมบันทึกผลการเรียน")
-window.geometry("800x600")
+window.geometry("800x800")
 
 title_label = tk.Label(
     window,
@@ -85,12 +138,14 @@ title_label.pack(pady=20)
 table_passed = ttk.Treeview(
     passed_frame,
     columns=("code", "name", "credit", "grade"),
-    show="headings"
+    show="headings",
+    style="Passed.Treeview",
 )
 table_wait = ttk.Treeview(
     waiting_frame,
     columns=("code", "name", "credit", "grade"),
-    show="headings"
+    show="headings",
+    style="Wait.Treeview",
 )
 
 table_passed.heading("code", text="รหัสวิชา")
@@ -155,7 +210,11 @@ grade_combo.set("กรุณาคลิกเลือกวิชา")
 
 update_button = tk.Button(
     center_frame,
-    text="อัปเดตเกรด"
+    text="💾 บันทึกเกรด",
+    font=("Kanit", 11),
+    width=15,
+    background="#fad96e",
+    command=update_grade
 )
 
 selected_subject_label = tk.Label(
@@ -164,39 +223,75 @@ selected_subject_label = tk.Label(
     font=("Kanit", 11)
 )
 
-table_passed.config(
-    height=max(3, passed_count)
+passed_height = min(5, max(3, passed_count))
+wait_height = min(7, max(3, wait_count))
+
+table_passed.config(height=passed_height)
+table_wait.config(height=wait_height)
+
+passed_scroll = ttk.Scrollbar(
+    passed_frame,
+    orient="vertical",
+    command=table_passed.yview
 )
 
-table_wait.config(
-    height=max(3, wait_count)
+table_passed.configure(
+    yscrollcommand=passed_scroll.set,
+)
+
+wait_scroll = ttk.Scrollbar(
+    waiting_frame,
+    orient="vertical",
+    command=table_wait.yview
+)
+
+table_wait.configure(
+    yscrollcommand=wait_scroll.set
+)
+
+table_passed.tag_configure(
+    "odd",
+    background="#6eec94"
+)
+
+table_wait.tag_configure(
+    "even",
+    background="#fa2376"
 )
 
 table_passed.bind("<<TreeviewSelect>>", on_select)
 table_wait.bind("<<TreeviewSelect>>", on_select)
 
-grade_combo.pack(pady=5)
+grade_combo.pack(pady=(20,5))
 grade_combo.config(state="disabled") 
 
 passes_label=tk.Label(passed_frame, text="วิชาที่ผ่านแล้ว")
-passed_frame.pack(fill="both", expand=True)
-passes_label.pack(pady=5)
+passed_frame.pack(fill="both", expand=True,  padx=20, pady=20)
+passed_scroll.pack(
+    side="right",
+    fill="y"
+)
 table_passed.pack(
+    side="left",
     fill="both",
-    padx=10,
-    pady=10
+    expand=True
 )
 
 center_frame.pack(fill="x")
 waiting_frame.pack(fill="both", expand=True, padx=20, pady=20)
-table_wait.pack(
-    fill="both",
-    padx=10,
-    pady=10
+wait_scroll.pack(
+    side="right",
+    fill="y"
 )
-selected_subject_label.pack()
+table_wait.pack(
+    side="left",
+    fill="both",
+    expand=True
+)
 
-update_button.pack(pady=5)
+selected_subject_label.pack(pady=5)
+
+update_button.pack(pady=20)
 
 
 window.mainloop()
