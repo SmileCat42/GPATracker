@@ -124,7 +124,7 @@ def update_gpa():
         credit_label.config(bg="#f7edc4")
         remain_label.config(bg="#f7edc4")
         gpa_label.config(
-            text=f" GPA: {gpa:.2f}",
+            text=f" GPA:  {gpa:.2f}",
             bg="#f7edc4"
         )
         honor_label.config(
@@ -138,7 +138,7 @@ def update_gpa():
         credit_label.config(bg="#c8f2f5")
         remain_label.config(bg="#c8f2f5")
         gpa_label.config(
-            text=f" GPA: {gpa:.2f}",
+            text=f" GPA:  {gpa:.2f}",
             bg="#c8f2f5"
         )
         honor_label.config(
@@ -151,7 +151,7 @@ def update_gpa():
         credit_label.config(bg="#f7c4c4")
         remain_label.config(bg="#f7c4c4")
         gpa_label.config(
-            text=f" GPA: {gpa:.2f}",
+            text=f" GPA:  {gpa:.2f}",
             bg="#f7c4c4"
         )
         honor_label.config(
@@ -164,7 +164,7 @@ def update_gpa():
         credit_label.config(bg="silver")
         remain_label.config(bg="silver")
         gpa_label.config(
-            text=f" GPA: {gpa:.2f}",
+            text=f" GPA:  {gpa:.2f}",
             bg="silver"
         )
         honor_label.config(
@@ -341,7 +341,7 @@ selected_subject_label = tk.Label(
     bg=control_frame["bg"]
 )
 
-passed_height = min(5, max(3, passed_count))
+passed_height = min(4, max(3, passed_count))
 wait_height = min(7, max(3, wait_count))
 
 table_passed.config(height=passed_height)
@@ -372,9 +372,17 @@ table_wait.configure(
 title_label = tk.Label(
     window,
     text="โปรแกรมบันทึกผลการเรียน",
-    font=("Kanit", 20)
+    font=("Kanit", 20, "bold")
 )
-title_label.pack(pady=20)
+title_label.pack(pady=(20,0))
+title2_label = tk.Label(
+    window,
+    text="Comsci Ramkamhaeng University\n" \
+    "กฤตยา ตันติชัยยกุล",
+    font=("Kanit", 11),
+    fg="#6E6D6D"
+)
+title2_label.pack(pady=(2,2))
 
 gpa_label = tk.Label(
         info_frame,
@@ -415,7 +423,7 @@ grade_combo.pack(pady=(10,2))
 grade_combo.config(state="disabled") 
 
 passes_label=tk.Label(passed_frame, text="วิชาที่ผ่านแล้ว")
-passed_frame.pack(fill="both", expand=True,  padx=20, pady=20)
+passed_frame.pack(fill="both", expand=True,  padx=20, pady=10)
 passed_scroll.pack(
     side="right",
     fill="y"
@@ -427,7 +435,7 @@ table_passed.pack(
 )
 
 center_frame.pack(fill="x")
-waiting_frame.pack(fill="both", expand=True, padx=20, pady=20)
+waiting_frame.pack(fill="both", expand=True, padx=20, pady=10)
 wait_scroll.pack(
     side="right",
     fill="y"
