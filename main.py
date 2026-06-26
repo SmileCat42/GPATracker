@@ -61,7 +61,18 @@ progress.pack(pady=(5,10))
 
 #+++++++++++++++++++++++++++++++++++++++++++ Function ++++++++++++++++++++++++++++++++++++++++++++++
 
+def show_guide():
+    guide = tk.Toplevel(window)
+    guide.title("คู่มือการใช้งาน")
+    guide.geometry("650x500")
+
+def show_about():
+    about = tk.Toplevel(window)
+    about.title("About")
+    about.geometry("500x350")
+
 def start():
+    progress.stop()
     splash.destroy()
 
 splash.after(3000, start)
@@ -299,12 +310,6 @@ style.configure(
 
 #++++++++++++++++++++++++++++++++++++++++++++++++ Frame ++++++++++++++++++++++++++++++++++++++++++
 
-top_menu = tk.Frame(
-    window,
-    bg="#F5F5F5",
-    height=40
-)
-top_menu.pack(fill="x")
 passed_frame = ttk.LabelFrame(
     window,
     text="      วิชาที่ผ่านแล้ว",
@@ -349,31 +354,6 @@ control_frame.pack(
 window.title("โปรแกรมบันทึกผลการเรียน")
 window.geometry("800x800")
 
-#+++++++++++++++++++++++++++++++++++++++++++++ Menu bar ++++++++++++++++++++++++++++++++++++++++++
-
-guide_btn = tk.Button(
-    top_menu,
-    text="💡 คู่มือการใช้งาน",
-    relief="flat",
-    bg="#F5F5F5",
-    activebackground="#E8E8E8",
-    cursor="hand2",
-    command=show_guide
-)
-
-guide_btn.pack(side="left", padx=(15,5), pady=5)
-
-about_btn = tk.Button(
-    top_menu,
-    text="ℹ️ About",
-    relief="flat",
-    bg="#F5F5F5",
-    activebackground="#E8E8E8",
-    cursor="hand2",
-    command=show_about
-)
-
-about_btn.pack(side="left", padx=5, pady=5)
 #+++++++++++++++++++++++++++++++++++++++++++++++++ Table +++++++++++++++++++++++++++++++++++
 
 table_passed = ttk.Treeview(
@@ -501,6 +481,44 @@ title_label = tk.Label(
     fg="#435570"
 )
 title_label.pack(pady=(20,0))
+title2_label = tk.Label(
+    window,
+    text="Ramkhamhaeng GPA Tracker",
+    font=("Kanit", 14),
+    fg="#919191"
+)
+title2_label.pack(pady=(0,5))
+
+top_menu = tk.Frame(
+    window,
+    bg=window.cget("bg")     # ใช้สีพื้นเดียวกับโปรแกรม
+)
+top_menu.pack(pady=(0, 2))
+#+++++++++++++++++++++++++++++++++++++++++++++ Menu bar ++++++++++++++++++++++++++++++++++++++++++
+
+guide_btn = tk.Button(
+    top_menu,
+    text="💡 คำแนะนำการใช้งาน",
+    relief="flat",
+    bg=window.cget("bg"),
+    activebackground="#E8E8E8",
+    cursor="hand2",
+    command=show_guide
+)
+
+guide_btn.pack(side="left", padx=(15,5), pady=1)
+
+about_btn = tk.Button(
+    top_menu,
+    text="ℹ️About",
+    relief="flat",
+    bg=window.cget("bg"),
+    activebackground="#E8E8E8",
+    cursor="hand2",
+    command=show_about
+)
+
+about_btn.pack(side="left", padx=5, pady=1)
 
 gpa_label = tk.Label(
         info_frame,
