@@ -19,14 +19,14 @@
 Student Grade Management System for CSRU
 <br><br></p><br>
 <h2><b>  How to use</b></h2>
-1. Download program click here
-2. Select a subject from the "Courses Not Yet Passed" table.
-3. Choose a grade from the dropdown list.
-4. Click the 💾 Save Grade button.
-5. The program will:
-   • Recalculate your GPA.
-   • Update the total completed credits.
-   • Move the subject to the "Completed Courses" table.
+1. Download program click here<br>
+2. Select a subject from the "Courses Not Yet Passed" table.<br>
+3. Choose a grade from the dropdown list.<br>
+4. Click the 💾 Save Grade button.<br>
+5. The program will:<br>
+   • Recalculate your GPA.<br>
+   • Update the total completed credits.<br>
+   • Move the subject to the "Completed Courses" table.<br>
 </p><br>
 <h2><b>  วิธีใช้งาน</b></h2>
 1. ติดตั้งโปรแกรม
