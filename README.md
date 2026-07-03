@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-Basics-blue?style=flat&logo=python">
+  <img src="https://img.shields.io/badge/Python-Basics-orange?style=flat&logo=python">
   <img src="https://img.shields.io/badge/Tkinter-tk&ttk-green?style=flat">
-  <img src="https://img.shields.io/badge/Py-Installer-purple?style=flat&logo=keras">
+  <img src="https://img.shields.io/badge/Export-pyInstaller-purple?style=flat&logo=keras">
   <a href="https://colab.research.google.com/">
-    <img src="https://img.shields.io/badge/Tool-Colab-orange?style=flat&logo=colab">
+    <img src="https://img.shields.io/badge/Tool-VSCode-blue?style=flat&logo=colab">
   </a>
   <br>
   <a href="#skill">
