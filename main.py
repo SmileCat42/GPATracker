@@ -193,9 +193,103 @@ def show_guide():
     ).pack(anchor="w", padx=35, pady=(5,20))
 
 def show_about():
+
     about = tk.Toplevel(window)
     about.title("About")
-    about.geometry("500x350")
+    about.geometry("500x430")
+    about.resizable(False, False)
+
+    frame = tk.Frame(
+        about,
+        padx=25,
+        pady=20
+    )
+    frame.pack(fill="both", expand=True)
+
+    # ===== Title =====
+    tk.Label(
+        frame,
+        text="🎓 GPA Tracker",
+        font=("Kanit", 20, "bold"),
+        fg="#435570"
+    ).pack()
+
+    tk.Label(
+        frame,
+        text="Student Grade Management System",
+        font=("Kanit", 11),
+        fg="gray"
+    ).pack(pady=(0, 15))
+
+    ttk.Separator(frame).pack(fill="x", pady=10)
+
+    # ===== Developer =====
+    tk.Label(
+        frame,
+        text="Developer",
+        font=("Kanit", 13, "bold"),
+        anchor="w"
+    ).pack(fill="x")
+
+    tk.Label(
+        frame,
+        text="กฤตยา ตันติชัยยกุล",
+        font=("Kanit", 11),
+        anchor="w",
+        justify="left"
+    ).pack(fill="x")
+
+    tk.Label(
+        frame,
+        text="Bachelor of Science (Computer Science)\nRamkhamhaeng University",
+        font=("Kanit", 11),
+        fg="gray",
+        justify="left",
+        anchor="w"
+    ).pack(fill="x", pady=(0, 10))
+
+    ttk.Separator(frame).pack(fill="x", pady=10)
+
+    # ===== Contact =====
+    tk.Label(
+        frame,
+        text="Contact",
+        font=("Kanit", 13, "bold"),
+        anchor="w"
+    ).pack(fill="x")
+
+    tk.Label(
+        frame,
+        text="📧 Email\n   golfring.dove@gmail.com",
+        font=("Kanit", 11),
+        justify="left",
+        anchor="w"
+    ).pack(fill="x", pady=(5, 5))
+
+    tk.Label(
+        frame,
+        text="💬 LINE\n   golfalohaha",
+        font=("Kanit", 11),
+        justify="left",
+        anchor="w"
+    ).pack(fill="x")
+
+    ttk.Separator(frame).pack(fill="x", pady=15)
+
+    # ===== Footer =====
+    tk.Label(
+        frame,
+        text="Version 1.0",
+        font=("Kanit", 10),
+        fg="gray"
+    ).pack()
+
+    tk.Label(
+        frame,
+        text="© 2026 GPA Tracker\nAll Rights Reserved.",
+        font=("Kanit", 10),
+        fg="gray"
+    ).pack(pady=(5, 0))
 
 def start():
     progress.stop()
@@ -624,7 +718,7 @@ top_menu.pack(pady=(0, 2))
 
 guide_btn = tk.Button(
     top_menu,
-    text="💡 คำแนะนำการใช้งาน",
+    text="🛈 คำแนะนำการใช้งาน",
     relief="flat",
     bg=window.cget("bg"),
     activebackground="#E8E8E8",
@@ -636,7 +730,7 @@ guide_btn.pack(side="left", padx=(15,5), pady=1)
 
 about_btn = tk.Button(
     top_menu,
-    text="ℹ️About",
+    text="ⓘ About",
     relief="flat",
     bg=window.cget("bg"),
     activebackground="#E8E8E8",

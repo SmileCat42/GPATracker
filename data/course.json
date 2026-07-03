@@ -63,7 +63,7 @@
         "code": "MTH1101",
         "name": "แคลคูลัสและเรขาคณิตวิเคราะห์ 1",
         "credit": 3,
-        "grade": ""
+        "grade": "B"
     },
     {
         "code": "MTH1201",
@@ -75,19 +75,19 @@
         "code": "STA2003",
         "name": "หลักสถิติ",
         "credit": 3,
-        "grade": ""
+        "grade": "C"
     },
     {
         "code": "COS1101",
         "name": "วิทยาการคอมพิวเตอร์เบื้องต้น",
         "credit": 3,
-        "grade": ""
+        "grade": "A"
     },
     {
         "code": "COS1102",
         "name": "โครงสร้างไม่ต่อเนื่อง",
         "credit": 3,
-        "grade": ""
+        "grade": "B"
     },
     {
         "code": "COS1103",
