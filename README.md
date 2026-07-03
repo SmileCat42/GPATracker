@@ -1,7 +1,7 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Deep%20Learning-lv2.-green?style=flat">
   <img src="https://img.shields.io/badge/Python-Basics-blue?style=flat&logo=python">
-  <img src="https://img.shields.io/badge/Dataset-Keras-purple?style=flat&logo=keras">
+  <img src="https://img.shields.io/badge/Tkinter-green?style=flat">
+  <img src="https://img.shields.io/badge/PyInstaller-purple?style=flat&logo=keras">
   <a href="https://colab.research.google.com/">
     <img src="https://img.shields.io/badge/Tool-Colab-orange?style=flat&logo=colab">
   </a>
