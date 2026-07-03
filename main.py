@@ -62,9 +62,135 @@ progress.pack(pady=(5,10))
 #+++++++++++++++++++++++++++++++++++++++++++ Function ++++++++++++++++++++++++++++++++++++++++++++++
 
 def show_guide():
+
     guide = tk.Toplevel(window)
     guide.title("คู่มือการใช้งาน")
-    guide.geometry("650x500")
+    guide.geometry("700x550")
+
+    # ---------- Canvas ----------
+    canvas = tk.Canvas(guide, highlightthickness=0)
+
+    scrollbar = ttk.Scrollbar(
+        guide,
+        orient="vertical",
+        command=canvas.yview
+    )
+
+    scroll_frame = tk.Frame(canvas)
+
+    scroll_frame.bind(
+        "<Configure>",
+        lambda e: canvas.configure(
+            scrollregion=canvas.bbox("all")
+        )
+    )
+
+    canvas.create_window(
+        (0, 0),
+        window=scroll_frame,
+        anchor="nw"
+    )
+
+    canvas.configure(
+        yscrollcommand=scrollbar.set
+    )
+
+    canvas.pack(
+        side="left",
+        fill="both",
+        expand=True
+    )
+
+    scrollbar.pack(
+        side="right",
+        fill="y"
+    )
+
+    # ---------- หัวข้อ ----------
+    tk.Label(
+        scroll_frame,
+        text=" คู่มือการใช้งาน\n",
+        font=("Kanit",18,"bold"),
+        fg="#435570"
+    ).pack(
+        anchor="w",
+        padx=20,
+        pady=(20,10)
+    )
+
+    # ---------- วิธีใช้งาน ----------
+    tk.Label(
+        scroll_frame,
+        text=" วิธีใช้งาน",
+        font=("Kanit",14,"bold")
+    ).pack(anchor="w", padx=20)
+
+    tk.Label(
+        scroll_frame,
+        justify="left",
+        anchor="w",
+        font=("Kanit",11),
+        text=
+"""1. เลือกวิชาจากตาราง 'วิชาที่ยังไม่ผ่าน'
+2. เลือกเกรดจากรายการ
+3. กดปุ่ม 💾 บันทึกเกรด
+4. โปรแกรมจะ
+• คำนวณ GPA ใหม่
+• อัปเดตจำนวนหน่วยกิต
+• ย้ายวิชาไปยังตารางที่ผ่านแล้ว
+"""
+    ).pack(
+        anchor="w",
+        padx=35,
+        pady=(5,20)
+    )
+
+    ttk.Separator(scroll_frame).pack(fill="x", padx=20)
+
+    # ---------- ความหมายของสี ----------
+    tk.Label(
+        scroll_frame,
+        text=" ความหมายของสี",
+        font=("Kanit",14,"bold")
+    ).pack(anchor="w", padx=20, pady=(15,0))
+
+    tk.Label(
+        scroll_frame,
+        justify="left",
+        anchor="w",
+        font=("Kanit",11),
+        text=
+""" สีทอง      GPA ≥ 3.50 (เกียตินิยมอันดับ 1)
+ สีฟ้า        GPA ≥ 3.25 (เกียตินิยมอันดับ 2)
+ สีเทา       GPA ปกติ
+ สีแดง      GPA ≤ 2.00 (ควรปรับปรุงผลการเรียน)
+ สีเขียว    ยังไม่มีการบันทึกเกรด
+"""
+    ).pack(anchor="w", padx=35, pady=(5,20))
+
+    ttk.Separator(scroll_frame).pack(fill="x", padx=20)
+
+    # ---------- หมายเหตุ ----------
+    tk.Label(
+        scroll_frame,
+        text=" หมายเหตุ",
+        font=("Kanit",14,"bold")
+    ).pack(anchor="w", padx=20, pady=(15,0))
+
+    tk.Label(
+        scroll_frame,
+        justify="left",
+        anchor="w",
+        font=("Kanit",11),
+        text=
+"""
+• ฟีเจอร์เกียตินิยมจะคำนวณจากเกรดเบื้องต้นเท่านั้น อย่างไรแล้วท่านอาจต้อง
+  ศึกษาเงื่อนไขกับทางมหาวิทยาลัยเพิ่มเติม เช่น การรีเกรด การเทียบโอน เป็นต้น
+• เวอร์ชั่นนี้ยังไม่ได้รอบรับการคำนวณเกรดของกลุ่มที่เทียบโอน หากท่านตรวจสอบแล้ว
+  ถ้ามีการคำนวณเกรดของกลุ่มวิชาทั่วไปด้วย ท่านสามารถใส่เกรด C+ ในกลุ่มวิชาเสรีและ
+  RAM ได้เลย แต่ถ้าไม่มีการคำนวณ ท่านก็เว้นไว้ ปล่อยให้อยู่ตารางข้างล่างได้เลย
+"""
+    ).pack(anchor="w", padx=35, pady=(5,20))
 
 def show_about():
     about = tk.Toplevel(window)
@@ -483,7 +609,7 @@ title_label = tk.Label(
 title_label.pack(pady=(20,0))
 title2_label = tk.Label(
     window,
-    text="Ramkhamhaeng GPA Tracker",
+    text="Comsci Ramkhamhaeng GPA Tracker",
     font=("Kanit", 14),
     fg="#919191"
 )
