@@ -18,16 +18,27 @@
 <p align="center">
 Student Grade Management System for CSRU
 <br><br></p><br>
-<h1><b>  วิธีใช้งาน</b></h1>
-1. เลือกวิชาจากตาราง 'วิชาที่ยังไม่ผ่าน'<br>
-2. เลือกเกรดจากรายการ<br>
-3. กดปุ่ม 💾 บันทึกเกรด<br>
-4. โปรแกรมจะ<br>
-• คำนวณ GPA ใหม่<br>
-• อัปเดตจำนวนหน่วยกิต<br>
-• ย้ายวิชาไปยังตารางที่ผ่านแล้ว<br>
+<h2><b>  How to use</b></h2>
+1. Download program click here
+2. Select a subject from the "Courses Not Yet Passed" table.
+3. Choose a grade from the dropdown list.
+4. Click the 💾 Save Grade button.
+5. The program will:
+   • Recalculate your GPA.
+   • Update the total completed credits.
+   • Move the subject to the "Completed Courses" table.
 </p><br>
-<h1><b>  ผู้พัฒนา</b></h1>
+<h2><b>  วิธีใช้งาน</b></h2>
+1. ติดตั้งโปรแกรม
+2. เลือกวิชาจากตาราง 'วิชาที่ยังไม่ผ่าน'<br>
+3. เลือกเกรดจากรายการ<br>
+4. กดปุ่ม 💾 บันทึกเกรด<br>
+5. โปรแกรมจะ<br>
+  • คำนวณ GPA ใหม่<br>
+  • อัปเดตจำนวนหน่วยกิต<br>
+  • ย้ายวิชาไปยังตารางที่ผ่านแล้ว<br>
+</p><br>
+<h2><b>  ผู้พัฒนา</b></h2>
 กฤตยา  ตันติชัยยกุล
 มหาวิทยาลัยรามคำแหง
 
