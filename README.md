@@ -19,7 +19,9 @@
 Student Grade Management System for CSRU
 <br><br></p><br>
 
+<p align="center">
 ![Pic](https://github.com/SmileCat42/GPATracker/blob/main/img/08.png)
+</p>
 
 <h2><b>  How to use</b></h2>
 1. Download program click here<br>
@@ -42,7 +44,7 @@ Student Grade Management System for CSRU
   • ย้ายวิชาไปยังตารางที่ผ่านแล้ว<br>
 </p><br>
 <h2><b>  ผู้พัฒนา</b></h2>
-กฤตยา  ตันติชัยยกุล
+กฤตยา  ตันติชัยยกุล<br>
 มหาวิทยาลัยรามคำแหง
 
 
