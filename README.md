@@ -20,7 +20,7 @@ Student Grade Management System for CSRU
 <br><br></p><br>
 
 <p align="center">
-![Pic](https://github.com/SmileCat42/GPATracker/blob/main/img/08.png)
+  <img src="https://raw.githubusercontent.com/SmileCat42/GPATracker/main/img/08.png" alt="Pic" width="700">
 </p>
 
 <h2><b>  How to use</b></h2>
