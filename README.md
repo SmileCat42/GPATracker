@@ -18,6 +18,9 @@
 <p align="center">
 Student Grade Management System for CSRU
 <br><br></p><br>
+
+![Pic](https://github.com/SmileCat42/GPATracker/blob/main/img/08.png)
+
 <h2><b>  How to use</b></h2>
 1. Download program click here<br>
 2. Select a subject from the "Courses Not Yet Passed" table.<br>
